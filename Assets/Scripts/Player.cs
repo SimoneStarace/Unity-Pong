@@ -15,6 +15,18 @@ public class Player : MonoBehaviour
     /// </summary>
     [SerializeField]
     private float _speed = 4.0f;
+
+    #region Method for _speed
+    /// <summary>
+    /// Updates the speed of the player.
+    /// </summary>
+    /// <param name="_speed">The speed value.</param>
+    public void SetSpeed(float _speed)
+    {
+        this._speed = _speed;
+    }
+    #endregion
+
     /// <summary>
     /// Reference to the transform of the wall.
     /// </summary>
@@ -29,10 +41,6 @@ public class Player : MonoBehaviour
     /// Property for tell if the player is controlled by AI.
     /// </summary>
     public bool IsAIOn { private get; set; } = false;
-    /// <summary>
-    /// Property for make the AI react faster.
-    /// </summary>
-    public float AISpeedReaction { get; set; } = 2.0f;
 
     private void Start()
     {
@@ -56,15 +64,17 @@ public class Player : MonoBehaviour
         if(!IsAIOn)
         {
             //The player controls the racket.
-            transform.Translate(new Vector3(0, Input.GetAxis(_axisInputName) * _speed * Time.deltaTime, 0.0f));
+            UpdatePosition(Input.GetAxis(_axisInputName));
         }
         else //The AI controls the racket.
         {
-            //If the y component is different from the ball.
-            if(transform.position.y != _ball.transform.position.y)
+            //Local difference between the paddle and the ball.
+            float yDiff = transform.position.y - _ball.transform.position.y;
+            //If the absolute difference between the paddle and the ball is greater or equal to 1.
+            if (Mathf.Abs(yDiff) > 0.5f)
             {
-                //Tell the new position to the player.
-                transform.position = new Vector2(transform.position.x, Vector2.MoveTowards(transform.position, _ball.transform.position, (_speed*AISpeedReaction) * Time.deltaTime).y);
+                //Tell the new position to the AI.
+                UpdatePosition((yDiff > 0.5f ? -1 : 1));
             }
         }
 
@@ -74,5 +84,15 @@ public class Player : MonoBehaviour
             //Change the position
             transform.position = new Vector2(transform.position.x, Mathf.Clamp(transform.position.y, _bottomWall.position.y + (transform.localScale.y-1), _topWall.position.y - (transform.localScale.y-1)));
         }
+    }
+
+    /// <summary>
+    /// Update the Y position of the player
+    /// </summary>
+    /// <param name="direction"></param>
+    private void UpdatePosition(float direction)
+    {
+        //The player controls the racket.
+        transform.Translate(new Vector3(0, direction * _speed * Time.deltaTime, 0.0f));
     }
 }

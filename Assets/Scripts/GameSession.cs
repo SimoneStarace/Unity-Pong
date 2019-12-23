@@ -30,7 +30,9 @@ public class GameSession : MonoBehaviour
     {
         #if UNITY_EDITOR
             Debug.Log(GameManager.IsPlayer2AIOn + " " + GameManager.AIDiff);
-        #endif
+#endif
+        //Set the framerate.
+        ApplicationManager.SetFramerate();
 
         CheckPlayer2AISetup();
 
@@ -98,19 +100,19 @@ public class GameSession : MonoBehaviour
         {
             //Make the player 2 controlled by AI.
             _player2.IsAIOn = true;
-
+            
             //Check the difficulty of the AI.
             if (GameManager.AIDiff == GameManager.Difficulty.Easy)
             {
-                _player2.AISpeedReaction = 1.5f;
+                _player2.SetSpeed(3.5f);
             }
             else if (GameManager.AIDiff == GameManager.Difficulty.Normal)
             {
-                _player2.AISpeedReaction = 2.0f;
+                _player2.SetSpeed(4.0f);
             }
             else if (GameManager.AIDiff == GameManager.Difficulty.Hard)
             {
-                _player2.AISpeedReaction = 3.0f;
+                _player2.SetSpeed(5.5f);
             }
         }
     }

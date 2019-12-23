@@ -45,7 +45,7 @@ public class Ball : MonoBehaviour
             //Play the sound.
             AudioSource.PlayClipAtPoint(_sound, Camera.main.transform.position);
         }
-        //Local variable for adding the volocity on the y direction.
+        //Local variable for adding the velocity on the y direction.
         float yDirectionVelocity = 0.0f;
         //If the other object is a player.
         if(other.gameObject.CompareTag("Player"))
@@ -71,18 +71,22 @@ public class Ball : MonoBehaviour
     /// <summary>
     /// Coroutine for Launch the ball.
     /// </summary>
-    /// <param name="random">Value that specify where to launch the ball.</param>
+    /// <param name="direction">Value that specify where to launch the ball.</param>
     /// <returns></returns>
-    private System.Collections.IEnumerator ReLaunch(int random)
+    private System.Collections.IEnumerator ReLaunch(int direction)
     {
         //Set the velocity to zero.
         _rigidBody2D.velocity = Vector2.zero;
+        //Do not take in count the physic system.
+        _rigidBody2D.simulated = false;
         //Set the position based on who made the last point.
-        transform.position = Vector2.zero + (random == 0 ? Vector2.left : Vector2.right);
+        transform.position = Vector2.zero + (direction == 0 ? Vector2.left : Vector2.right);
         //Wait for 3 seconds.
         yield return new WaitForSeconds(3.0f);
+        //Take in count the physic system.
+        _rigidBody2D.simulated = true;
         //Assign the velocity based on who made the last point.
         // -speed will go to player 1, speed will go to player 2.
-        _rigidBody2D.velocity = new Vector2(random == 0 ? -_speed : _speed, 0.0f);
+        _rigidBody2D.velocity = new Vector2(direction == 0 ? -_speed : _speed, 0.0f);
     }
 }
