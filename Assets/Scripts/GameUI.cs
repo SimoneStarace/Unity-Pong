@@ -23,12 +23,14 @@ public class GameUI : MonoBehaviour
 
     private void Start()
     {
-        //if the winner screen isn't null.
+        /*if the winner screen isn't null.
         if(_winnerUI)
         {
             //Disable it.
             _winnerUI.SetActive(false);
         }
+        */
+        _winnerUI?.SetActive(false);
     }
     /// <summary>
     /// Method for update the score text
@@ -55,12 +57,14 @@ public class GameUI : MonoBehaviour
             //Show the text.
             _winnerText.text = winnerPlayer + "\nwins";
         }
-
+        /*
         if(_winnerUI)
         {
             //Show the winner screen.
             _winnerUI.SetActive(true);
         }
+        */
+        _winnerUI?.SetActive(true);
         
     }
 }

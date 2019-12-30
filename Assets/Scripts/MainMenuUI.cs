@@ -18,7 +18,6 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
-
         //If the start screen isn't null.
         if (_startScreen)
         {
@@ -54,22 +53,20 @@ public class MainMenuUI : MonoBehaviour
     /// Method for set the AI for player 2.
     /// </summary>
     /// <param name="value">The value of the option</param>
-    public void SetGameManagerAI(bool value)
-    {
-        //Assign the value to the GameManager.
-        GameManager.IsPlayer2AIOn = value;
-    }
+    public void SetGameManagerAI(bool value) => GameManager.IsPlayer2AIOn = value;
+
     /// <summary>
     /// Method for set the difficulty of the AI.
     /// </summary>
     /// <param name="value">The value of the difficulty</param>
     public void SetGameManagerAIDifficulty(int value)
     {
+        GameManager.Difficulty diff = (GameManager.Difficulty)value;
         //If the value is less or equal to the last value in the enum.
-        if((GameManager.Difficulty)value <= GameManager.Difficulty.Hard)
+        if(diff <= GameManager.Difficulty.Hard)
         {
             //Assign the difficulty.
-            GameManager.AIDiff = (GameManager.Difficulty)value;
+            GameManager.AIDiff = diff;
         }
     }
 
@@ -77,8 +74,5 @@ public class MainMenuUI : MonoBehaviour
     /// Takes an url for open a webpage.
     /// </summary>
     /// <param name="url">The url of the webpage.</param>
-    public void OpenWebPageByUrl(string url)
-    {
-        ApplicationManager.OpenWebPage(url);
-    }
+    public void OpenWebPageByUrl(string url) => ApplicationManager.OpenWebPage(url);
 }

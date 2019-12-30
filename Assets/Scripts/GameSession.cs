@@ -30,7 +30,7 @@ public class GameSession : MonoBehaviour
     {
         #if UNITY_EDITOR
             Debug.Log(GameManager.IsPlayer2AIOn + " " + GameManager.AIDiff);
-#endif
+        #endif
         //Set the framerate.
         ApplicationManager.SetFramerate();
 
@@ -84,7 +84,8 @@ public class GameSession : MonoBehaviour
     /// Method to send which player won the match.
     /// </summary>
     /// <param name="player">The name of the player.</param>
-    private void ShowWinner(string player)
+    private void ShowWinner(string player) => _gameUI?.ShowWinner(player);
+    /*
     {
         if (_gameUI)
         {
@@ -92,6 +93,7 @@ public class GameSession : MonoBehaviour
             _gameUI.ShowWinner(player);
         }
     }
+    */
 
     private void CheckPlayer2AISetup()
     {

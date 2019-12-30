@@ -68,12 +68,15 @@ public class Player : MonoBehaviour
         }
         else //The AI controls the racket.
         {
-            //Local difference between the paddle and the ball.
-            float yDiff = transform.position.y - _ball.transform.position.y;
+            //Local difference between the paddle and the ball on the y direction.
+            float yDiff;
             //If the absolute difference between the paddle and the ball is greater or equal to 1.
-            if (Mathf.Abs(yDiff) > 0.5f)
+            if (Mathf.Abs(yDiff = transform.position.y - _ball.transform.position.y) > 0.5f)
             {
-                //Tell the new position to the AI.
+                /*Tell the new position to the AI.
+                 * -1 Moves UP.
+                 * 1 Moves DOWN.
+                 */
                 UpdatePosition((yDiff > 0.5f ? -1 : 1));
             }
         }

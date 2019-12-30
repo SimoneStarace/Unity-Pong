@@ -9,17 +9,13 @@ public class LevelManager : MonoBehaviour
     /// Method for load a scene
     /// </summary>
     /// <param name="name">Name of the scene</param>
-    public void LoadScene(string name)
-    {
-        SceneManager.LoadScene(name);
-    }
+    public void LoadScene(string name) => SceneManager.LoadScene(name);
+
     /// <summary>
     /// Method for reload the scene.
     /// </summary>
-    public void ReloadScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    public void ReloadScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     /// <summary>
     /// Close the application
     /// </summary>

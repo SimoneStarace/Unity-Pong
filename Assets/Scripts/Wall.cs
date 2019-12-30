@@ -28,12 +28,14 @@ public class Wall : MonoBehaviour
         {
             //Get the value of the direction in integer.
             int indexDirection = (int)_direction;
-            //If the object GameSession isn't null.
+            /* If the object GameSession isn't null.
             if(_gameSession)
             {
                 //Tell to increase the score to a specific player.
                 _gameSession.IncreasePlayerScore(indexDirection);
             }
+            */
+            _gameSession?.IncreasePlayerScore(indexDirection);
             //Reset the ball position.
             b.Reset(indexDirection);
         }

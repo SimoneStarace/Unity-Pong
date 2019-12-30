@@ -1,13 +1,12 @@
-﻿using UnityEngine;
-/// <summary>
+﻿/// <summary>
 /// Class that contains some options.
 /// </summary>
-public class GameManager : MonoBehaviour
+public static class GameManager
 {
     /// <summary>
     /// Enumerator for specify the difficulty of the AI
     /// </summary>
-    public enum Difficulty { Easy,Normal,Hard}
+    public enum Difficulty : byte { Easy,Normal,Hard}
     /// <summary>
     /// The difficulty of the AI
     /// </summary>

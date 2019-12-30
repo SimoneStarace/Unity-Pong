@@ -64,10 +64,8 @@ public class Ball : MonoBehaviour
     /// <summary>
     /// Method for reset the ball position
     /// </summary>
-    public void Reset(int random)
-    {
-        StartCoroutine(ReLaunch(random));
-    }
+    public void Reset(int random) => StartCoroutine(ReLaunch(random));
+
     /// <summary>
     /// Coroutine for Launch the ball.
     /// </summary>
