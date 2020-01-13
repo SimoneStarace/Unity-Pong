@@ -17,7 +17,7 @@ public class GameSession : MonoBehaviour
     /// <summary>
     /// The max score for the match.
     /// </summary>
-    private const int _maxScore = 10;
+    private readonly int _maxScore = GameManager.MaxScore;
 
     private int[] _playerScore; //Array of players scores.
     /// <summary>
@@ -31,8 +31,6 @@ public class GameSession : MonoBehaviour
         #if UNITY_EDITOR
             Debug.Log(GameManager.IsPlayer2AIOn + " " + GameManager.AIDiff);
         #endif
-        //Set the framerate.
-        ApplicationManager.SetFramerate();
 
         CheckPlayer2AISetup();
 
@@ -41,7 +39,7 @@ public class GameSession : MonoBehaviour
         //Index 1 refers to player 1.
 
         //Find the GameUI Object.
-        _gameUI = GameObject.FindObjectOfType<GameUI>();
+        _gameUI = FindObjectOfType<GameUI>();
     }
 
     /// <summary>
@@ -51,7 +49,7 @@ public class GameSession : MonoBehaviour
     public void IncreasePlayerScore(int index)
     {
         //If the score sound isn't null.
-        if(_scoreSound)
+        if(_scoreSound && GameManager.IsSoundOn)
         {
             //Play the sound.
             AudioSource.PlayClipAtPoint(_scoreSound, Camera.main.transform.position);

@@ -5,7 +5,7 @@
 public class MainMenuUI : MonoBehaviour
 {
     /// <summary>
-    /// Reference to the first screen
+    /// //Reference to the first screen.
     /// </summary>
     [SerializeField]
     private GameObject _startScreen = null;
@@ -40,39 +40,12 @@ public class MainMenuUI : MonoBehaviour
     {
         if (_authorText)
         {
-            _authorText.text = "Made by <b>" + ApplicationManager.GetCompanyName() + "</b>.";
+            _authorText.text = "Made by <b>" + ApplicationManager.Instance?.GetCompanyName() + "</b>.";
         }
 
         if (_versionText)
         {
-            _versionText.text = "Version: <b>" + ApplicationManager.GetVersion() + "</b>";
+            _versionText.text = "Version: <b>" + ApplicationManager.Instance?.GetVersion() + "</b>";
         }
     }
-
-    /// <summary>
-    /// Method for set the AI for player 2.
-    /// </summary>
-    /// <param name="value">The value of the option</param>
-    public void SetGameManagerAI(bool value) => GameManager.IsPlayer2AIOn = value;
-
-    /// <summary>
-    /// Method for set the difficulty of the AI.
-    /// </summary>
-    /// <param name="value">The value of the difficulty</param>
-    public void SetGameManagerAIDifficulty(int value)
-    {
-        GameManager.Difficulty diff = (GameManager.Difficulty)value;
-        //If the value is less or equal to the last value in the enum.
-        if(diff <= GameManager.Difficulty.Hard)
-        {
-            //Assign the difficulty.
-            GameManager.AIDiff = diff;
-        }
-    }
-
-    /// <summary>
-    /// Takes an url for open a webpage.
-    /// </summary>
-    /// <param name="url">The url of the webpage.</param>
-    public void OpenWebPageByUrl(string url) => ApplicationManager.OpenWebPage(url);
 }

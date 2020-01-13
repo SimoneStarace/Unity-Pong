@@ -4,9 +4,17 @@
 public static class GameManager
 {
     /// <summary>
+    /// Static int that tells how many points each player must reach for win the game.
+    /// </summary>
+    public static int MaxScore { get; set; } = 10;
+    /// <summary>
+    /// Static property that tells if the sounds should be played.
+    /// </summary>
+    public static bool IsSoundOn { get; set; } = true;
+    /// <summary>
     /// Enumerator for specify the difficulty of the AI
     /// </summary>
-    public enum Difficulty : byte { Easy,Normal,Hard}
+    public enum Difficulty : byte {Easy,Normal,Hard}
     /// <summary>
     /// The difficulty of the AI
     /// </summary>

@@ -2,13 +2,30 @@
 /// <summary>
 /// Manager that takes care of the Application
 /// </summary>
-public static class ApplicationManager
+public class ApplicationManager : MonoBehaviour
 {
+    public static ApplicationManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if(!Instance)
+        {
+            Instance = this;
+            Instance.transform.SetParent(null);
+            Instance.SetFramerate();
+            DontDestroyOnLoad(Instance);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     /// <summary>
     /// Get the version of the game.
     /// </summary>
     /// <returns></returns>
-    public static string GetVersion()
+    public string GetVersion()
     {
         return Application.version;
     }
@@ -16,7 +33,7 @@ public static class ApplicationManager
     /// Get the company name of the game.
     /// </summary>
     /// <returns>The company name.</returns>
-    public static string GetCompanyName()
+    public string GetCompanyName()
     {
         return Application.companyName;
     }
@@ -24,7 +41,7 @@ public static class ApplicationManager
     /// Set the framerate of the game.
     /// </summary>
     /// <param name="framerate">The framerate the application should run.</param>
-    public static void SetFramerate(int framerate = 60)
+    public void SetFramerate(int framerate = 60)
     {
         Application.targetFrameRate = framerate;
     }
@@ -32,7 +49,7 @@ public static class ApplicationManager
     /// Opens a webpage by url.
     /// </summary>
     /// <param name="url">The url of the webpage</param>
-    public static void OpenWebPage(string url)
+    public void OpenWebPage(string url)
     {
         if(!string.IsNullOrEmpty(url) && url.Contains("https://"))
         {

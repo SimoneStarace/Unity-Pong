@@ -19,7 +19,7 @@ public class Ball : MonoBehaviour
     /// The sound of the ball.
     /// </summary>
     [SerializeField]
-    private AudioClip _sound = null;
+    private AudioClip _ballSound = null;
     /// <summary>
     /// The rigidbody 2d component of the ball.
     /// </summary>
@@ -40,10 +40,10 @@ public class Ball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         //If the sound attribute is not null.
-        if(_sound)
+        if(_ballSound && GameManager.IsSoundOn)
         {
             //Play the sound.
-            AudioSource.PlayClipAtPoint(_sound, Camera.main.transform.position);
+            AudioSource.PlayClipAtPoint(_ballSound, Camera.main.transform.position);
         }
         //Local variable for adding the velocity on the y direction.
         float yDirectionVelocity = 0.0f;
