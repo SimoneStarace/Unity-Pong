@@ -3,7 +3,7 @@ using TMPro;
 /// <summary>
 /// Class that control the Game UI.
 /// </summary>
-public class GameUI : MonoBehaviour
+public class GameMenu : MonoBehaviour
 {
     /// <summary>
     /// Reference to the player scores texts.

@@ -23,7 +23,7 @@ public class GameSession : MonoBehaviour
     /// <summary>
     /// Reference to the GameUI.
     /// </summary>
-    private GameUI _gameUI;
+    private GameMenu _gameMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,7 @@ public class GameSession : MonoBehaviour
         //Index 1 refers to player 1.
 
         //Find the GameUI Object.
-        _gameUI = FindObjectOfType<GameUI>();
+        _gameMenu = FindObjectOfType<GameMenu>();
     }
 
     /// <summary>
@@ -61,10 +61,10 @@ public class GameSession : MonoBehaviour
             RemoveObjects();
         }
         //If the Game UI is not null.
-        if(_gameUI)
+        if(_gameMenu)
         {
             //Update the score.
-            _gameUI.UpdatePlayerScore(index, _playerScore[index]);
+            _gameMenu.UpdatePlayerScore(index, _playerScore[index]);
         }
         //If player 2 has the maximum score
         if(_playerScore[0] >= _maxScore)
@@ -82,7 +82,7 @@ public class GameSession : MonoBehaviour
     /// Method to send which player won the match.
     /// </summary>
     /// <param name="player">The name of the player.</param>
-    private void ShowWinner(string player) => _gameUI?.ShowWinner(player);
+    private void ShowWinner(string player) => _gameMenu?.ShowWinner(player);
     /*
     {
         if (_gameUI)

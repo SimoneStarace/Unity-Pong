@@ -37,7 +37,7 @@ public class SettingsMenu : MonoBehaviour
     /// Sets the max score for the GameManager
     /// </summary>
     /// <param name="value"></param>
-    public void OnMaxScoreFieldEndChange(string value) => GameManager.MaxScore = System.Math.Abs(int.Parse(value));
+    public void OnMaxScoreFieldEndChange(string value) => GameManager.MaxScore = Mathf.Clamp(int.Parse(value),1,99);
     /// <summary>
     /// Sets the framerate of the game.
     /// </summary>

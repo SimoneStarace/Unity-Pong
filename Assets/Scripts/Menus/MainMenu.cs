@@ -2,7 +2,7 @@
 /// <summary>
 /// Class that control the UI of the main menu.
 /// </summary>
-public class MainMenuUI : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
     /// <summary>
     /// //Reference to the first screen.

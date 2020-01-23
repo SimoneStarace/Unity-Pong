@@ -622,6 +622,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5292541e6cfdb4bb14cf5f692810ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gitHubButton: {fileID: 224384479}
+  _youtubeButton: {fileID: 1294002719}
 --- !u!1 &217563274
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,7 +737,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 224384480}
   m_OnClick:
     m_PersistentCalls:
@@ -5791,7 +5793,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1294002720}
   m_OnClick:
     m_PersistentCalls:
