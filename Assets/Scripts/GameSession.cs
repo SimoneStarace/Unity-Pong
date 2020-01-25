@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using Menus;
+using Managers;
 /// <summary>
 /// Class that control the logic of the Game by taking count of the scores.
 /// </summary>
 public class GameSession : MonoBehaviour
 {
+    #region FIELDS
     /// <summary>
     /// Reference to the audio clip to play when a player gets a point.
     /// </summary>
@@ -24,13 +27,15 @@ public class GameSession : MonoBehaviour
     /// Reference to the GameUI.
     /// </summary>
     private GameMenu _gameMenu;
+    #endregion
 
+    #region METHODS
     // Start is called before the first frame update
     void Start()
     {
-        #if UNITY_EDITOR
-            Debug.Log(GameManager.IsPlayer2AIOn + " " + GameManager.AIDiff);
-        #endif
+#if UNITY_EDITOR
+        Debug.Log(GameManager.IsPlayer2AIOn + " " + GameManager.AIDiff);
+#endif
 
         CheckPlayer2AISetup();
 
@@ -49,25 +54,25 @@ public class GameSession : MonoBehaviour
     public void IncreasePlayerScore(int index)
     {
         //If the score sound isn't null.
-        if(_scoreSound && GameManager.IsSoundOn)
+        if (_scoreSound && GameManager.IsSoundOn)
         {
             //Play the sound.
             AudioSource.PlayClipAtPoint(_scoreSound, Camera.main.transform.position);
         }
         //Increase the score and check if it's equal or greater than the max score.
-        if(++_playerScore[index] >= _maxScore)
+        if (++_playerScore[index] >= _maxScore)
         {
             //Remove the players and the ball.
             RemoveObjects();
         }
         //If the Game UI is not null.
-        if(_gameMenu)
+        if (_gameMenu)
         {
             //Update the score.
             _gameMenu.UpdatePlayerScore(index, _playerScore[index]);
         }
         //If player 2 has the maximum score
-        if(_playerScore[0] >= _maxScore)
+        if (_playerScore[0] >= _maxScore)
         {
             ShowWinner("Player 2");
         }
@@ -100,7 +105,7 @@ public class GameSession : MonoBehaviour
         {
             //Make the player 2 controlled by AI.
             _player2.IsAIOn = true;
-            
+
             //Check the difficulty of the AI.
             if (GameManager.AIDiff == GameManager.Difficulty.Easy)
             {
@@ -123,12 +128,13 @@ public class GameSession : MonoBehaviour
     private void RemoveObjects()
     {
         //Find every player component inside the objects in the scene.
-        foreach(Player p in GameObject.FindObjectsOfType<Player>())
+        foreach (Player p in GameObject.FindObjectsOfType<Player>())
         {
             //Destroy the gameobjects.
             Destroy(p.gameObject);
         }
         //Find the ball object and destroy it.
         Destroy(GameObject.FindObjectOfType<Ball>().gameObject);
-    }
+    } 
+    #endregion
 }

@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using Managers;
 /// <summary>
 /// Class that control the movement of the Ball.
 /// </summary>
 [RequireComponent(typeof(CircleCollider2D),typeof(Rigidbody2D))]
 public class Ball : MonoBehaviour
 {
+    #region FIELDS
     /// <summary>
     /// The speed movement of the ball.
     /// </summary>
@@ -24,14 +26,16 @@ public class Ball : MonoBehaviour
     /// The rigidbody 2d component of the ball.
     /// </summary>
     private Rigidbody2D _rigidBody2D;
+    #endregion
 
+    #region METHODS
     // Start is called before the first frame update
     void Start()
     {
         //Get the rigidbody component.
         _rigidBody2D = GetComponent<Rigidbody2D>();
         //Reset the position of the ball.
-        Reset(Random.Range(0,2));
+        Reset(Random.Range(0, 2));
     }
     /// <summary>
     /// On every collision 2D
@@ -40,7 +44,7 @@ public class Ball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         //If the sound attribute is not null.
-        if(_ballSound && GameManager.IsSoundOn)
+        if (_ballSound && GameManager.IsSoundOn)
         {
             //Play the sound.
             AudioSource.PlayClipAtPoint(_ballSound, Camera.main.transform.position);
@@ -48,17 +52,17 @@ public class Ball : MonoBehaviour
         //Local variable for adding the velocity on the y direction.
         float yDirectionVelocity = 0.0f;
         //If the other object is a player.
-        if(other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             //Add the y direction based on the position of the collision of the player racket.
-            yDirectionVelocity = (other.GetContact(0).point.y - other.gameObject.transform.position.y)*2;
+            yDirectionVelocity = (other.GetContact(0).point.y - other.gameObject.transform.position.y) * 2;
 
-            #if UNITY_EDITOR
-                Debug.Log("yDirectionVelocity: " + yDirectionVelocity);
-            #endif
+#if UNITY_EDITOR
+            Debug.Log("yDirectionVelocity: " + yDirectionVelocity);
+#endif
         }
         //Add the velocity to the rigidbody component.
-        _rigidBody2D.velocity += new Vector2(_rigidBody2D.velocity.x > 0 ? _additionalSpeedX : -_additionalSpeedX,yDirectionVelocity);
+        _rigidBody2D.velocity += new Vector2(_rigidBody2D.velocity.x > 0 ? _additionalSpeedX : -_additionalSpeedX, yDirectionVelocity);
     }
 
     /// <summary>
@@ -86,5 +90,6 @@ public class Ball : MonoBehaviour
         //Assign the velocity based on who made the last point.
         // -speed will go to player 1, speed will go to player 2.
         _rigidBody2D.velocity = new Vector2(direction == 0 ? -_speed : _speed, 0.0f);
-    }
+    } 
+    #endregion
 }

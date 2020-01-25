@@ -4,7 +4,8 @@
 /// </summary>
 public class Wall : MonoBehaviour
 {
-    private enum Direction { Left,Right}
+    #region FIELDS
+    private enum Direction { Left, Right }
     /// <summary>
     /// The direction of the wall for reset the ball.
     /// </summary>
@@ -14,7 +15,9 @@ public class Wall : MonoBehaviour
     /// Reference to the GameSession object.
     /// </summary>
     private GameSession _gameSession;
+    #endregion
 
+    #region METHODS
     private void Start()
     {
         //Get the GameSession object.
@@ -24,7 +27,7 @@ public class Wall : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //Try getting the Ball component.
-        if(other.TryGetComponent(out Ball b))
+        if (other.TryGetComponent(out Ball b))
         {
             //Get the value of the direction in integer.
             int indexDirection = (int)_direction;
@@ -39,5 +42,6 @@ public class Wall : MonoBehaviour
             //Reset the ball position.
             b.Reset(indexDirection);
         }
-    }
+    } 
+    #endregion
 }
