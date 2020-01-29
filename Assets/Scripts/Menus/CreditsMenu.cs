@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using Managers;
 namespace Menus
 {
-    public class LinkMenu : MonoBehaviour
+    public class CreditsMenu : MonoBehaviour
     {
         #region FIELDS
         //Reference to the buttons.

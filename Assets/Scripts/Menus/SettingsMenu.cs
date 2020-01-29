@@ -43,7 +43,17 @@ namespace Menus
         /// Sets the max score for the GameManager
         /// </summary>
         /// <param name="value"></param>
-        public void OnMaxScoreFieldEndChange(string value) => GameManager.MaxScore = Mathf.Clamp(int.Parse(value), 1, 99);
+        public void OnMaxScoreFieldEndChange(string value)
+        {
+            //Specify the new MaxScore.
+            GameManager.MaxScore = Mathf.Clamp(int.Parse(value), 1, 99);
+            //If the inputfield is not null and the value of the input field is different from the max score of the game manager.
+            if(_inputMaxScoreField && int.Parse(_inputMaxScoreField.text) != GameManager.MaxScore)
+            {
+                //Updated the input field.
+                _inputMaxScoreField.text = GameManager.MaxScore.ToString();
+            }
+        }
         /// <summary>
         /// Sets the framerate of the game.
         /// </summary>
