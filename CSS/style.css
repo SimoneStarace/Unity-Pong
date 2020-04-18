@@ -23,6 +23,7 @@ a
 
 section h2
 {
+    text-align: center;
     text-decoration: underline;
 }
 
@@ -36,6 +37,11 @@ img.icon
 {
     width: 16px;
     height: 16px;
+}
+
+header 
+{
+    text-align: center;
 }
 
 footer
