@@ -1,6 +1,8 @@
 body
 {
-    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
     background-color: black;
 }
 
@@ -38,7 +40,6 @@ img.icon
 
 footer
 {
-    width: 50%;
-    margin-left: 25%;
+    text-align: center;
     background-color: #777;
 }
