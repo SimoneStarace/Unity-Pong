@@ -1,0 +1,19 @@
+body
+{
+    background-color: black;
+}
+
+header, section
+{
+    text-align: center;
+}
+
+section h2
+{
+    text-decoration: underline;
+}
+
+h1,h2, p, small
+{
+    color: white;
+}
