@@ -4,10 +4,19 @@ body
     background-color: black;
 }
 
-#Navigation
+h1
 {
-    border-top: 2px solid #777;
-    border-bottom: 2px solid #777;
+    font-size: 500%;
+}
+
+h1,h2, p, small , li, dt, dd
+{
+    color: white;
+}
+
+a 
+{
+    color: lightblue;
 }
 
 section h2
@@ -15,19 +24,21 @@ section h2
     text-decoration: underline;
 }
 
+#Navigation
+{
+    border-top: 2px solid #777;
+    border-bottom: 2px solid #777;
+}
+
+img.icon
+{
+    width: 16px;
+    height: 16px;
+}
+
 footer
 {
     width: 50%;
     margin-left: 25%;
     background-color: #777;
-}
-
-h1
-{
-    font-size: 500%;
-}
-
-h1,h2, p, small , li
-{
-    color: white;
 }
