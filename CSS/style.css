@@ -21,9 +21,13 @@ a
     color: lightblue;
 }
 
+header, footer, section h2
+{
+   text-align: center;
+}
+
 section h2
 {
-    text-align: center;
     text-decoration: underline;
 }
 
@@ -39,13 +43,14 @@ img.icon
     height: 16px;
 }
 
-header 
-{
-    text-align: center;
-}
-
 footer
 {
-    text-align: center;
     background-color: #777;
+}
+
+iframe
+{
+    width: 720px;
+    height: 420px;
+    border: 2px solid white;
 }
