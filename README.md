@@ -8,8 +8,8 @@ The video of "<b>[Making Pong in Unity](https://youtu.be/3PKY2P_fuUw)</b>" is av
 
 ## How to play the game
 You can play this game on the following web sites:
-- ![Unity-Pong Website](https://simonestarace.github.io/Unity-Pong/)
-- ![ShareMyGame.com](https://sharemygame.com/@Reaver/unity-pong)
+- [Unity-Pong Website](https://simonestarace.github.io/Unity-Pong/)
+- [ShareMyGame.com](https://sharemygame.com/@Reaver/unity-pong)
 
 ## Screenshots
 
