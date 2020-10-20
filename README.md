@@ -1,6 +1,6 @@
-![GitHub](https://img.shields.io/github/license/SimoneStarace/Unity-Pong)
-![YouTube Video Views](https://img.shields.io/youtube/views/3PKY2P_fuUw?style=social)
-<a href="https://www.paypal.com/paypalme/SimoneStarace"><img src="https://img.shields.io/badge/Paypal-Donate-blue?logo=paypal" alt="PayPal.me"></a>
+<a href="https://github.com/SimoneStarace/Unity-Pong/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/SimoneStarace/Unity-Pong" alt="License"></a>
+<a href="https://www.youtube.com/watch?v=3PKY2P_fuUw" target="_blank"><img src="https://img.shields.io/youtube/views/3PKY2P_fuUw?style=social" alt="Youtube"></a>
+<a href="https://www.paypal.com/paypalme/SimoneStarace" target="_blank"><img src="https://img.shields.io/badge/Paypal-Donate-blue?logo=paypal" alt="PayPal.me"></a>
 # Unity-Pong
 This repository contains the files related to my version of PONG made in Unity.
 
