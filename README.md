@@ -1,13 +1,17 @@
-[![LiCENSE](https://img.shields.io/github/license/SimoneStarace/Unity-Pong)](https://github.com/SimoneStarace/Unity-Pong/blob/master/LICENSE) [![YOUTUBE](https://img.shields.io/youtube/views/3PKY2P_fuUw?logo=youtube&logoColor=red&style=flat-square)](https://www.youtube.com/watch?v=3PKY2P_fuUw) [![PAYPAL](https://img.shields.io/badge/Paypal-Donate-blue?logo=paypal)](https://www.paypal.com/paypalme/SimoneStarace) [![Liberapay](https://img.shields.io/badge/Liberapay-Donate-yellow?logo=liberapay)](https://www.paypal.com/paypalme/SimoneStarace)
 # Unity-Pong
-This repository contains the files related to my version of PONG made in Unity.
-The video of "**[Making Pong in Unity](https://youtu.be/3PKY2P_fuUw)**" is available on my Youtube Channel.
+[![LiCENSE](https://img.shields.io/github/license/SimoneStarace/Unity-Pong?logo=github)](https://github.com/SimoneStarace/Unity-Pong/blob/master/LICENSE) [![YOUTUBE](https://img.shields.io/youtube/views/3PKY2P_fuUw?logo=youtube&logoColor=red&style=flat-square)](https://www.youtube.com/watch?v=3PKY2P_fuUw) [![PAYPAL](https://img.shields.io/badge/Paypal-Donate-blue?logo=paypal)](https://www.paypal.com/paypalme/SimoneStarace) [![Liberapay](https://img.shields.io/badge/Liberapay-Donate-yellow?logo=liberapay)](https://liberapay.com/SimoneStarace/)
+This repository contains the files related to my version of PONG made with the **[Unity Engine](https://unity.com/)**.
 
 # Table of contents
-1. [Screenshots](#screenshots)
-2. [How to play the game](#how-to-play-the-game)
-3. [License](#license)
-4. [Donations](#donations)
+1. [Build](#build)
+2. [Screenshots](#screenshots)
+3. [How to play the game](#how-to-play-the-game)
+4. [License](#license)
+5. [Donations](#donations)
+6. [Credits](#credits)
+
+## Build
+To build the game just [download](https://github.com/SimoneStarace/Unity-Pong/archive/master.zip) the files and open it with Unity.
 
 ## Screenshots
 
@@ -27,3 +31,12 @@ This project is licensed with the [MIT License](https://github.com/SimoneStarace
 You can donate me through those platforms:
 - [Paypal](https://www.paypal.com/paypalme/SimoneStarace)
 - [Liberapay](https://liberapay.com/SimoneStarace/)
+
+## Credits
+- **Game Developer**
+    - [Simone Starace](https://github.com/SimoneStarace)
+- **Sound Effects**
+    - [NoiseCollector](https://freesound.org/people/NoiseCollector/)
+    - [Piotr123](https://freesound.org/people/Piotr123/)
+- **Font**
+    - [MattyDeCesare](https://www.dafont.com/mattydecesare.d6113)
