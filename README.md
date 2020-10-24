@@ -1,5 +1,6 @@
 # Unity-Pong
 [![LiCENSE](https://img.shields.io/github/license/SimoneStarace/Unity-Pong?logo=github)](https://github.com/SimoneStarace/Unity-Pong/blob/master/LICENSE) [![YOUTUBE](https://img.shields.io/youtube/views/3PKY2P_fuUw?logo=youtube&logoColor=red&style=flat-square)](https://www.youtube.com/watch?v=3PKY2P_fuUw) [![PAYPAL](https://img.shields.io/badge/Paypal-Donate-blue?logo=paypal)](https://www.paypal.com/paypalme/SimoneStarace) [![Liberapay](https://img.shields.io/badge/Liberapay-Donate-yellow?logo=liberapay)](https://liberapay.com/SimoneStarace/)
+
 This repository contains the files related to my version of PONG made with the **[Unity Engine](https://unity.com/)**.
 
 # Table of contents
